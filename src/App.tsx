@@ -8,8 +8,6 @@ import { useState } from 'react';
 function App() {
   const {
     counter_value,
-    recent_sender,
-    owner_address,
     contract_address,
     contract_balance,
     sendIncrement,
