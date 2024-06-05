@@ -27,11 +27,11 @@ function App() {
   };
 
   return (
-    <div>
-      <div>
-        <TonConnectButton />
+    <div className="container">
+      <div className="header">
+        <TonConnectButton/>
       </div>
-      <div>
+      <div className="content">
         <div className='Card'>
           <b>Our contract Address</b>
           <div className='Hint'>{contract_address?.slice(0, 30) + "..."}</div>
@@ -41,7 +41,7 @@ function App() {
 
         <div className='Card'>
           <b>Counter Value</b>
-          <div>{counter_value ?? "Loading..."}</div>
+          <div className='Hint'>{counter_value ?? "Loading..."}</div>
         </div>
 
         {connected && (
