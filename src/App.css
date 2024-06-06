@@ -3,30 +3,60 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  --tg-theme-text-color: #fff;
+  --tg-theme-button-color: #2076b4;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
+.App {
+  height: 100vh;
+  background-color: var(--tg-theme-bg-color);
+  color: var(--tg-theme-text-color);
 }
 
-.header {
+.Container {
+  padding: 2rem;
+  max-width: 500px;
+  align-items: center;
+  text-align: center;
+}
+
+.Header {
   display: flex;
   justify-content: flex-end;
   padding: 10px;
 }
 
-.content {
+.Content {
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 5px;
+  gap: 5px;
+}
+.Input {
+  width: 50%;
+  height: 25px;
+  margin: 5px;
 }
 
-.Card {
-  margin: 10px 0;
+.Button {
+  background-color: var(--tg-theme-button-color);
+  color: var(--tg-theme-button-text-color);
+  display: inline-block;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  width: fit-content;
+  filter: brightness(105%);
 }
 
 .Hint {
-  color: grey;
+  color: rgb(163, 158, 158);
 }
 
+.Card {
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: #181717;
+}
