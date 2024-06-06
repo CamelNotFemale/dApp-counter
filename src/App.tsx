@@ -31,6 +31,11 @@ function App() {
     WebApp.showAlert("Hey there!");
   };
 
+  function sendDataToBot() {
+    const data = { key: "value" }; // Ваши данные
+    WebApp.sendData(JSON.stringify(data)); // Отправка данных в бота
+  }
+
   return (
     <div className="Container">
       <div className="Header">
@@ -57,9 +62,14 @@ function App() {
 
         <div className='Card'>
           {!connected && (
-            <button className='Button' onClick={() => { showAlert(); }} >
-              Show Alert!
-            </button>
+            <div className='Panel'>
+              <button className='Button' onClick={() => { showAlert(); }} >
+                Show Alert!
+              </button>
+              <button className='Button' onClick={() => { sendDataToBot(); }} >
+                Go to Bot
+              </button>
+            </div>
           )}
           {connected && (
             <button className='Button' onClick={() => { sendIncrement(); }} >

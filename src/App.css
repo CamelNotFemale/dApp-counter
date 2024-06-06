@@ -52,3 +52,10 @@
   border-radius: 10px;
   background-color: #181717;
 }
+
+.Panel {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  justify-content: center;
+}
