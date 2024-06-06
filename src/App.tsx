@@ -27,62 +27,60 @@ function App() {
   };
 
   return (
-    <div className='App'>
-      <div className="Container">
-        <div className="Header">
-          <TonConnectButton/>
+    <div className="Container">
+      <div className="Header">
+        <TonConnectButton/>
+      </div>
+      <div className="Content">
+        <div className='Card'>
+          <b>Our contract Address</b>
+          <div className='Hint'>{contract_address?.slice(0, 30) + "..."}</div>
         </div>
-        <div className="Content">
-          <div className='Card'>
-            <b>Our contract Address</b>
-            <div className='Hint'>{contract_address?.slice(0, 30) + "..."}</div>
-          </div>
 
-          <div className='Card'>
-            <b>Our contract Balance</b>
-            <div className='Hint'>{contract_balance !== null && fromNano(contract_balance)} TON</div>
-          </div>
-          
-          <div className='Card'>
-            <b>Counter Value</b>
-            <div className='Hint'>{counter_value ?? "Loading..."}</div>
-          </div>
+        <div className='Card'>
+          <b>Our contract Balance</b>
+          <div className='Hint'>{contract_balance !== null && fromNano(contract_balance)} TON</div>
+        </div>
+        
+        <div className='Card'>
+          <b>Counter Value</b>
+          <div className='Hint'>{counter_value ?? "Loading..."}</div>
+        </div>
 
-          <div className='Card'>
-            {connected && (
-              <button className='Button' onClick={() => { sendIncrement(); }} >
-                Increment
-              </button>
-            )}
-          </div>
-          
-
+        <div className='Card'>
           {connected && (
-            <div className='Card'>
-              <input className='Input'
-                type="number"
-                value={depositVal}
-                onChange={handleDeposit}
-              />
-              <button className='Button' onClick={() => { sendDeposit(depositVal) }}>
-                Deposit
-              </button>
-          </div>
-          )}
-
-          {connected && (
-            <div className='Card'>
-              <input className='Input'
-                type="number"
-                value={withdrawVal}
-                onChange={handleWithdraw}
-              />
-              <button className='Button' onClick={() => { sendWithdraw(withdrawVal) }}>
-                Withdraw
-              </button>
-          </div>
+            <button className='Button' onClick={() => { sendIncrement(); }} >
+              Increment
+            </button>
           )}
         </div>
+        
+
+        {connected && (
+          <div className='Card'>
+            <input className='Input'
+              type="number"
+              value={depositVal}
+              onChange={handleDeposit}
+            />
+            <button className='Button' onClick={() => { sendDeposit(depositVal) }}>
+              Deposit
+            </button>
+        </div>
+        )}
+
+        {connected && (
+          <div className='Card'>
+            <input className='Input'
+              type="number"
+              value={withdrawVal}
+              onChange={handleWithdraw}
+            />
+            <button className='Button' onClick={() => { sendWithdraw(withdrawVal) }}>
+              Withdraw
+            </button>
+        </div>
+        )}
       </div>
     </div>
   );

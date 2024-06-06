@@ -7,15 +7,7 @@
   --tg-theme-button-color: #2076b4;
 }
 
-.App {
-  height: 100vh;
-  background-color: var(--tg-theme-bg-color);
-  color: var(--tg-theme-text-color);
-}
-
 .Container {
-  padding: 2rem;
-  max-width: 500px;
   align-items: center;
   text-align: center;
 }
