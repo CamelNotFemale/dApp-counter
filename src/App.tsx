@@ -4,6 +4,7 @@ import { useCounter } from './hooks/useCounter';
 import { useTonConnect } from './hooks/useTonConnect';
 import { fromNano } from '@ton/core';
 import { useState } from 'react';
+import WebApp from '@twa-dev/sdk';
 
 function App() {
   const {
@@ -26,6 +27,10 @@ function App() {
     setWithdrawValue(event.target.value);
   };
 
+  const showAlert = () => {
+    WebApp.showAlert("Hey there!");
+  };
+
   return (
     <div className="Container">
       <div className="Header">
@@ -33,6 +38,9 @@ function App() {
       </div>
       <div className="Content">
         <div className='Card'>
+          <div>
+            <b>Your platform is {WebApp.platform}</b>
+          </div>
           <b>Our contract Address</b>
           <div className='Hint'>{contract_address?.slice(0, 30) + "..."}</div>
         </div>
@@ -48,6 +56,11 @@ function App() {
         </div>
 
         <div className='Card'>
+          {!connected && (
+            <button className='Button' onClick={() => { showAlert(); }} >
+              Show Alert!
+            </button>
+          )}
           {connected && (
             <button className='Button' onClick={() => { sendIncrement(); }} >
               Increment
